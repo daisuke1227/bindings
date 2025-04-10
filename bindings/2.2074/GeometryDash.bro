@@ -7966,8 +7966,7 @@ class GameObject : CCSpritePlus {
     int m_unk4C4;
     int m_unk4C8;
     int m_unk4CC;
-    // 0: GameObject, 1: EffectGameObject, 2: AnimatedGameObject, 4: EnhancedGameObject, 5: SmartGameObject
-    int m_classType;
+    GameObjectClassType m_classType;
     bool m_isTrigger;
     bool m_isSpawnOrderTrigger;
     bool m_isColorTrigger;
@@ -8192,7 +8191,7 @@ class GameStatsManager : cocos2d::CCNode {
     void firstSetup();
     void generateItemUnlockableData() = imac 0x651f0, m1 0x59b18, win 0x1ce340;
     int getAwardedCurrencyForLevel(GJGameLevel*) = ios 0x3326e0, win 0x1dd750, imac 0x70ab0, m1 0x6450c;
-    int getAwardedDiamondsForLevel(GJGameLevel*) = imac 0x712a0, win 0x1ddf40;
+    int getAwardedDiamondsForLevel(GJGameLevel*) = imac 0x712a0, win 0x1ddf40, m1 0x64cb4, ios 0x332bac;
     int getBaseCurrency(int stars, bool featured, int levelID);
     int getBaseCurrencyForLevel(GJGameLevel*) = ios 0x3325b8, win 0x1dd4b0, imac 0x708c0, m1 0x642c4;
     void getBaseDiamonds(int) = imac 0x71240, m1 0x64c64;
@@ -11618,7 +11617,15 @@ class GJRewardItem : cocos2d::CCObject {
         return ret;
     }
     static GJRewardItem* createWithObject(GJRewardType, GJRewardObject*) = win 0x1f09c0, imac 0x8be90, m1 0x7fad0;
-    static GJRewardItem* createWithObjects(GJRewardType, cocos2d::CCArray*) = win 0x1f0a50, imac 0x71cf0, m1 0x65720;
+    static GJRewardItem* createWithObjects(GJRewardType type, cocos2d::CCArray* objects) = win 0x1f0a50, imac 0x71cf0, m1 0x65720, ios inline {
+        auto ret = create();
+        if (ret->m_rewardObjects != objects) {
+            CC_SAFE_RETAIN(objects);
+            CC_SAFE_RELEASE(ret->m_rewardObjects);
+            ret->m_rewardObjects = objects;
+        }
+        return ret;
+    }
     static SpecialRewardItem getNextShardType(SpecialRewardItem type) = win inline {
         switch (type) {
             case SpecialRewardItem::FireShard: return SpecialRewardItem::IceShard;
@@ -11725,7 +11732,11 @@ class GJRewardObject : cocos2d::CCObject {
         auto ret = create(SpecialRewardItem::FireShard, 0, 0); // the first param is meant to be 0
         return ret;
     }
-    static GJRewardObject* createItemUnlock(UnlockType, int) = win 0x1f0810, imac 0x71c10, m1 0x65638;
+    static GJRewardObject* createItemUnlock(UnlockType type, int id) = win 0x1f0810, imac 0x71c10, m1 0x65638, ios inline {
+        auto ret = create(SpecialRewardItem::CustomItem, 1, id);
+        ret->m_unlockType = type;
+        return ret;
+    }
 
     static GJRewardObject* createWithCoder(DS_Dictionary* dict) = win inline, imac 0x8e800, m1 0x81f64 {
         auto ret = create();
@@ -13146,7 +13157,7 @@ class HardStreak : cocos2d::CCDrawNode {
     void firstSetup() = ios 0x61518;
     TodoReturn normalizeAngle(double);
     TodoReturn quadCornerOffset(cocos2d::CCPoint, cocos2d::CCPoint, float);
-    void reset() = win inline, imac 0x9d4e0, m1 0x8ffc8 {
+    void reset() = win inline, imac 0x9d4e0, m1 0x8ffc8, ios 0x61c1c {
         this->clear();
         m_pointArray->removeAllObjects();
     }
@@ -22161,7 +22172,7 @@ class SmartGameObject : GameObject {
     bool init(char const* frame) = win inline {
         if (!GameObject::init(frame)) return false;
         m_baseFrame = frame;
-        m_classType = 5;
+        m_classType = GameObjectClassType::Smart;
         m_bUnkBool2 = false;
         return true;
     }
