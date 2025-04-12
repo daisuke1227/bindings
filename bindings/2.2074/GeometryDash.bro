@@ -6781,7 +6781,7 @@ class GameLevelManager : cocos2d::CCNode {
     void onGetGJRewardsCompleted(gd::string response, gd::string tag);
     TodoReturn onGetGJSecretRewardCompleted(gd::string, gd::string);
     void onGetGJUserInfoCompleted(gd::string response, gd::string tag) = win 0x157aa0;
-    void onGetLeaderboardScoresCompleted(gd::string response, gd::string tag) = win 0x155b80, m1 0x468fa0, imac 0x50a9d0;
+    void onGetLeaderboardScoresCompleted(gd::string response, gd::string tag) = win 0x155b80, m1 0x468fa0, imac 0x50a9d0, ios 0x8FD44;
     void onGetLevelCommentsCompleted(gd::string response, gd::string tag);
     void onGetLevelLeaderboardCompleted(gd::string response, gd::string tag);
     void onGetLevelListsCompleted(gd::string response, gd::string tag) = win 0x14e970, imac 0x5145d0;
