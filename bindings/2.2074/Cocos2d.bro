@@ -74,7 +74,7 @@ class cocos2d::CCEaseRateAction : cocos2d::CCActionEase {
     }
 
     virtual cocos2d::CCObject* copyWithZone(cocos2d::CCZone* pZone) = m1 0x45e138, imac 0x4fe710, ios inline {
-        // CCZone* pNewZone = NULL;
+        CCZone* pNewZone = NULL;
         CCEaseRateAction* pCopy = NULL;
         if(pZone && pZone->m_pCopyObject) 
         {
@@ -84,12 +84,12 @@ class cocos2d::CCEaseRateAction : cocos2d::CCActionEase {
         else
         {
             pCopy = new CCEaseRateAction();
-            // pNewZone = new CCZone(pCopy);
+            pNewZone = new CCZone(pCopy);
         }
 
         pCopy->initWithAction((CCActionInterval*)(m_pInner->copy()->autorelease()), m_fRate);
 
-        // CC_SAFE_DELETE(pNewZone);
+        CC_SAFE_DELETE(pNewZone);
         return pCopy;
     }
 
@@ -181,7 +181,7 @@ class cocos2d::CCEaseBackInOut : cocos2d::CCActionEase {
     // CCEaseBackInOut();
 
     virtual cocos2d::CCObject* copyWithZone(cocos2d::CCZone* pZone) = m1 0x461080, imac 0x5016d0, ios inline {
-	// CCZone* pNewZone = NULL;
+	CCZone* pNewZone = NULL;
         CCEaseBackInOut* pCopy = NULL;
         if(pZone && pZone->m_pCopyObject) 
         {
@@ -191,12 +191,12 @@ class cocos2d::CCEaseBackInOut : cocos2d::CCActionEase {
         else
         {
             pCopy = new CCEaseBackInOut();
-            // pNewZone = new CCZone(pCopy);
+            pNewZone = new CCZone(pCopy);
         }
 
         pCopy->initWithAction((CCActionInterval *)(m_pInner->copy()->autorelease()));
     
-        // CC_SAFE_DELETE(pNewZone);
+        CC_SAFE_DELETE(pNewZone);
         return pCopy;
     }
     virtual void update(float time) = m1 0x461168, imac 0x5017d0, ios inline {
@@ -278,7 +278,7 @@ class cocos2d::CCEaseBounceInOut : cocos2d::CCEaseBounce {
     // CCEaseBounceInOut();
 
     virtual cocos2d::CCObject* copyWithZone(cocos2d::CCZone* pZone) = m1 0x4608d4, imac 0x500f70, ios inline {
-	// CCZone* pNewZone = NULL;
+	CCZone* pNewZone = NULL;
         CCEaseBounceInOut* pCopy = NULL;
         if(pZone && pZone->m_pCopyObject) 
         {
@@ -288,12 +288,12 @@ class cocos2d::CCEaseBounceInOut : cocos2d::CCEaseBounce {
         else
         {
             pCopy = new CCEaseBounceInOut();
-            // pNewZone = new CCZone(pCopy);
+            pNewZone = new CCZone(pCopy);
         }
 
         pCopy->initWithAction((CCActionInterval *)(m_pInner->copy()->autorelease()));
     
-        // CC_SAFE_DELETE(pNewZone);
+        CC_SAFE_DELETE(pNewZone);
         return pCopy;
     }
     virtual void update(float time) = m1 0x4609bc, imac 0x501070, ios inline {
@@ -351,7 +351,7 @@ class cocos2d::CCEaseElastic : cocos2d::CCActionEase {
     }
 
     virtual cocos2d::CCObject* copyWithZone(cocos2d::CCZone* pZone) = m1 0x45f704, imac 0x4ffd50, ios inline {
-        // CCZone* pNewZone = NULL;
+        CCZone* pNewZone = NULL;
         CCEaseElastic* pCopy = NULL;
         if(pZone && pZone->m_pCopyObject) 
         {
@@ -361,12 +361,12 @@ class cocos2d::CCEaseElastic : cocos2d::CCActionEase {
         else
         {
             pCopy = new CCEaseElastic();
-            // pNewZone = new CCZone(pCopy);
+            pNewZone = new CCZone(pCopy);
         }
 
         pCopy->initWithAction((CCActionInterval *)(m_pInner->copy()->autorelease()), m_fPeriod);
 
-        // CC_SAFE_DELETE(pNewZone);
+        CC_SAFE_DELETE(pNewZone);
         return pCopy;
     }
     virtual cocos2d::CCActionInterval* reverse() = m1 0x45f7fc, imac 0x4ffe60, ios inline {
@@ -428,7 +428,7 @@ class cocos2d::CCEaseElasticInOut : cocos2d::CCEaseElastic {
     // CCEaseElasticInOut();
 
     virtual cocos2d::CCObject* copyWithZone(cocos2d::CCZone* pZone) = m1 0x45fde0, imac 0x5004d0, ios inline {
-        // CCZone* pNewZone = NULL;
+        CCZone* pNewZone = NULL;
         CCEaseElasticInOut* pCopy = NULL;
         if(pZone && pZone->m_pCopyObject) 
         {
@@ -438,12 +438,12 @@ class cocos2d::CCEaseElasticInOut : cocos2d::CCEaseElastic {
         else
         {
             pCopy = new CCEaseElasticInOut();
-            // pNewZone = new CCZone(pCopy);
+            pNewZone = new CCZone(pCopy);
         }
 
         pCopy->initWithAction((CCActionInterval *)(m_pInner->copy()->autorelease()), m_fPeriod);
 
-        // CC_SAFE_DELETE(pNewZone);
+        CC_SAFE_DELETE(pNewZone);
         return pCopy;
     }
     virtual void update(float time) = m1 0x45fed8, imac 0x5005e0, ios inline {
@@ -515,7 +515,7 @@ class cocos2d::CCEaseExponentialInOut : cocos2d::CCActionEase {
     // CCEaseExponentialInOut();
 
     virtual cocos2d::CCObject* copyWithZone(cocos2d::CCZone* pZone) = m1 0x45ee90, imac 0x4ff4a0, ios inline {
-        //CCZone* pNewZone = NULL;
+        CCZone* pNewZone = NULL;
         CCEaseExponentialInOut* pCopy = NULL;
         if(pZone && pZone->m_pCopyObject) 
         {
@@ -525,12 +525,12 @@ class cocos2d::CCEaseExponentialInOut : cocos2d::CCActionEase {
         else
         {
             pCopy = new CCEaseExponentialInOut();
-            //pNewZone = new CCZone(pCopy);
+            pNewZone = new CCZone(pCopy);
         }
 
         pCopy->initWithAction((CCActionInterval *)(m_pInner->copy()->autorelease()));
 
-        //CC_SAFE_DELETE(pNewZone);
+        CC_SAFE_DELETE(pNewZone);
         return pCopy;
     }
     virtual void update(float time) = imac 0x4ff5a0, m1 0x45ef78, ios inline {
@@ -585,9 +585,8 @@ class cocos2d::CCEaseSineIn : cocos2d::CCActionEase {
     // CCEaseSineIn(cocos2d::CCEaseSineIn const&);
     // CCEaseSineIn();
 
-    // I can't use flippin CCZone constructor because codegen does not work with args in constructors
     virtual cocos2d::CCObject* copyWithZone(cocos2d::CCZone* pZone) = m1 0x45f0ac, imac 0x4ff6d0, ios inline {
-        // CCZone* pNewZone = NULL;
+        CCZone* pNewZone = NULL;
         CCEaseSineIn* pCopy = NULL;
         if(pZone && pZone->m_pCopyObject)
         {
@@ -597,11 +596,11 @@ class cocos2d::CCEaseSineIn : cocos2d::CCActionEase {
         else
         {
             pCopy = new CCEaseSineIn();
-            // pNewZone = new CCZone(pCopy);
+            pNewZone = new CCZone(pCopy);
         }
         pCopy->initWithAction((CCActionInterval *)(m_pInner->copy()->autorelease()));
         
-        // CC_SAFE_DELETE(pNewZone);
+        CC_SAFE_DELETE(pNewZone);
         return pCopy;
     }
     // This doesn't even get called. Why? I don't know.
@@ -635,9 +634,8 @@ class cocos2d::CCEaseSineOut : cocos2d::CCActionEase {
     // CCEaseSineOut(cocos2d::CCEaseSineOut const&);
     // CCEaseSineOut();
 
-    // I can't use flippin CCZone constructor because codegen does not work with args in constructors
     virtual cocos2d::CCObject* copyWithZone(cocos2d::CCZone* pZone) = m1 0x45f2a0, imac 0x4ff8d0, ios inline {
-        // CCZone* pNewZone = NULL;
+        CCZone* pNewZone = NULL;
         CCEaseSineOut* pCopy = NULL;
         if(pZone && pZone->m_pCopyObject) 
         {
@@ -647,12 +645,12 @@ class cocos2d::CCEaseSineOut : cocos2d::CCActionEase {
         else
         {
             pCopy = new CCEaseSineOut();
-            // pNewZone = new CCZone(pCopy);
+            pNewZone = new CCZone(pCopy);
         }
 
         pCopy->initWithAction((CCActionInterval *)(m_pInner->copy()->autorelease()));
     
-        // CC_SAFE_DELETE(pNewZone);
+        CC_SAFE_DELETE(pNewZone);
         return pCopy;
     }
     virtual void update(float time) = m1 0x45f388, imac 0x4ff9d0, ios inline {
@@ -685,9 +683,8 @@ class cocos2d::CCEaseSineInOut : cocos2d::CCActionEase {
     // CCEaseSineInOut(cocos2d::CCEaseSineInOut const&);
     // CCEaseSineInOut();
 
-    // I can't use flippin CCZone constructor because codegen does not work with args in constructors
     virtual cocos2d::CCObject* copyWithZone(cocos2d::CCZone* pZone) = m1 0x45f48c, imac 0x4ffac0, ios inline {
-        // CCZone* pNewZone = NULL;
+        CCZone* pNewZone = NULL;
         CCEaseSineInOut* pCopy = NULL;
         if(pZone && pZone->m_pCopyObject)
         {
@@ -697,12 +694,12 @@ class cocos2d::CCEaseSineInOut : cocos2d::CCActionEase {
         else
         {
             pCopy = new CCEaseSineInOut();
-            // pNewZone = new CCZone(pCopy);
+            pNewZone = new CCZone(pCopy);
         }
 
         pCopy->initWithAction((CCActionInterval *)(m_pInner->copy()->autorelease()));
         
-        // CC_SAFE_DELETE(pNewZone);
+        CC_SAFE_DELETE(pNewZone);
         return pCopy;
     }
     virtual void update(float time) = m1 0x45f574, imac 0x4ffbc0, ios inline {
@@ -835,27 +832,27 @@ class cocos2d::CCRemoveSelf : cocos2d::CCActionInstant {
     // CCRemoveSelf();
 
     virtual cocos2d::CCObject* copyWithZone(cocos2d::CCZone* pZone) = imac 0x796cb0, m1 0x6a9e1c, ios inline {
-	// CCZone *pNewZone = NULL;
-	CCRemoveSelf *pRet = NULL;
+        CCZone *pNewZone = NULL;
+        CCRemoveSelf *pRet = NULL;
 
-	if (pZone && pZone->m_pCopyObject) {
-		pRet = (CCRemoveSelf*)(pZone->m_pCopyObject);
-	} else {
-		pRet = new CCRemoveSelf();
-		// pZone = pNewZone = new cocos2d::CCZone(pRet);
-	}
+        if (pZone && pZone->m_pCopyObject) {
+            pRet = (CCRemoveSelf*)(pZone->m_pCopyObject);
+        } else {
+            pRet = new CCRemoveSelf();
+            pZone = pNewZone = new cocos2d::CCZone(pRet);
+        }
 
-	// cocos2d::CCActionInstant::copyWithZone(pZone);
-	pRet->init(m_bIsNeedCleanUp);
-	// CC_SAFE_DELETE(pNewZone);
-	return pRet;
+        cocos2d::CCActionInstant::copyWithZone(pZone);
+        pRet->init(m_bIsNeedCleanUp);
+        CC_SAFE_DELETE(pNewZone);
+        return pRet;
     }
     virtual void update(float time) = imac 0x796c30, m1 0x6a9da4, ios inline {
-	CC_UNUSED_PARAM(time);
-	m_pTarget->removeFromParentAndCleanup(m_bIsNeedCleanUp);
+        CC_UNUSED_PARAM(time);
+        m_pTarget->removeFromParentAndCleanup(m_bIsNeedCleanUp);
     }
     virtual cocos2d::CCFiniteTimeAction* reverse() = imac 0x796c50, m1 0x6a9dbc, ios inline {
-	return (CCFiniteTimeAction*)(cocos2d::CCRemoveSelf::create(m_bIsNeedCleanUp));
+        return (CCFiniteTimeAction*)(cocos2d::CCRemoveSelf::create(m_bIsNeedCleanUp));
     }
 }
 
@@ -1005,7 +1002,7 @@ class cocos2d::CCSkewTo : cocos2d::CCActionInterval {
     }
 
     virtual cocos2d::CCObject* copyWithZone(cocos2d::CCZone* pZone) = m1 0x332248, imac 0x3a5900, ios inline {
-	// CCZone* pNewZone = NULL;
+        CCZone* pNewZone = NULL;
         CCSkewTo* pCopy = NULL;
         if(pZone && pZone->m_pCopyObject) 
         {
@@ -1015,22 +1012,22 @@ class cocos2d::CCSkewTo : cocos2d::CCActionInterval {
         else
         {
             pCopy = new CCSkewTo();
-            // pZone = pNewZone = new CCZone(pCopy);
+            pZone = pNewZone = new CCZone(pCopy);
         }
 
         CCActionInterval::copyWithZone(pZone);
 
         pCopy->initWithDuration(m_fDuration, m_fEndSkewX, m_fEndSkewY);
 
-        // CC_SAFE_DELETE(pNewZone);
+        CC_SAFE_DELETE(pNewZone);
         return pCopy;
     }
     virtual void update(float t) = m1 0x332410, imac 0x3a5b30, ios inline {
-	m_pTarget->setSkewX(m_fStartSkewX + m_fDeltaX * t);
+        m_pTarget->setSkewX(m_fStartSkewX + m_fDeltaX * t);
         m_pTarget->setSkewY(m_fStartSkewY + m_fDeltaY * t);
     }
     virtual void startWithTarget(cocos2d::CCNode* pTarget) = m1 0x332328, imac 0x3a59e0, ios inline {
-	CCActionInterval::startWithTarget(pTarget);
+        CCActionInterval::startWithTarget(pTarget);
 
         m_fStartSkewX = pTarget->getSkewX();
 
@@ -1077,7 +1074,7 @@ class cocos2d::CCSkewTo : cocos2d::CCActionInterval {
         }
     }
     virtual bool initWithDuration(float t, float sx, float sy) = m1 0x332220, imac 0x3a58c0, ios inline {
-	bool bRet = false;
+        bool bRet = false;
 
         if (CCActionInterval::initWithDuration(t))
         {
@@ -1200,7 +1197,7 @@ class cocos2d::CCScene : cocos2d::CCNode {
 
     // CCScene(cocos2d::CCScene const&);
     CCScene() = imac 0x27ed80, m1 0x228780, ios 0x240128;
-    ~CCScene() = imac 0x27ee70, m1 0x22887c, ios 0x2401a8; // ios: idfk i just guessed
+    ~CCScene() = imac 0x27ee70, m1 0x22887c, ios 0x2401a8;
 
     virtual bool init() = m1 0x228894, imac 0x27eea0, ios 0x2401c0;
 }
@@ -1885,7 +1882,7 @@ class cocos2d::CCGLProgram : cocos2d::CCObject {
 [[link(win, android)]]
 class cocos2d::CCNode : cocos2d::CCObject {
     static cocos2d::CCNode* create() = m1 0x20cad4, imac 0x260d40, ios 0x23b3f0;
-    static void resetGlobalOrderOfArrival();
+    static void resetGlobalOrderOfArrival() = m1 0x20c198, imac 0x260200, ios 0x23ab14;
 
     // CCNode(cocos2d::CCNode const&);
     CCNode() = imac 0x260210, m1 0x20c1a8, ios 0x23ab24;
@@ -1915,7 +1912,7 @@ class cocos2d::CCNode : cocos2d::CCObject {
     void detachChild(cocos2d::CCNode*, bool);
     void insertChild(cocos2d::CCNode*, int);
     unsigned int numberOfRunningActions();
-    void pauseSchedulerAndActions() = m1 0x20dc28, imac 0x261e70;
+    void pauseSchedulerAndActions() = m1 0x20dc28, imac 0x261e70, ios 0x23c0c4;
     void qsortAllChildrenWithIndex();
     void resumeSchedulerAndActions() = imac 0x261c50, m1 0x20da08, ios 0x23bed0;
     cocos2d::CCAction* runAction(cocos2d::CCAction*) = imac 0x261f80, m1 0x20dd34, ios 0x23c1d0;
@@ -2073,7 +2070,7 @@ class cocos2d::CCScheduler : cocos2d::CCObject {
     void scheduleSelector(cocos2d::SEL_SCHEDULE, cocos2d::CCObject*, float, unsigned int, float, bool) = imac 0x42e250, m1 0x3a8f7c, ios 0x1ad808;
     void scheduleSelector(cocos2d::SEL_SCHEDULE, cocos2d::CCObject*, float, bool) = imac 0x42e230, m1 0x3a8f6c, ios 0x1ad7f8;
     void scheduleUpdateForTarget(cocos2d::CCObject*, int, bool) = imac 0x42ee60, m1 0x3a9bec, ios 0x1ae428;
-    void unscheduleAll();
+    void unscheduleAll() = m1 0x3a8d94, imac 0x42e060, ios 0x1ad6a0;
     void unscheduleAllForTarget(cocos2d::CCObject*) = imac 0x42f420;
     void unscheduleAllWithMinPriority(int);
     void unscheduleScriptEntry(unsigned int);
@@ -2187,7 +2184,7 @@ class cocos2d::CCObject : cocos2d::CCCopying {
 
     // CCObject(cocos2d::CCObject const&);
     CCObject() = imac 0x477bd0, m1 0x3e6090, ios 0x88938;
-    ~CCObject() = imac 0x477ce0, m1 0x3e61b0, ios 0x88a10;
+    ~CCObject() = imac 0x477c70, m1 0x3e6120, ios 0x88980;
 
     cocos2d::CCObjectType getObjType() const;
 
@@ -2339,7 +2336,7 @@ class cocos2d::CCTexture2D : cocos2d::CCObject {
     bool initWithString(char const*, char const*, float, cocos2d::CCSize const&, cocos2d::CCTextAlignment, cocos2d::CCVerticalTextAlignment) = imac 0x466300, m1 0x3d6198;
     bool initWithString(char const*, cocos2d::_ccFontDefinition*);
 
-    cocos2d::CCSize const& getContentSizeInPixels();
+    cocos2d::CCSize const& getContentSizeInPixels() = m1 0x3d54cc, imac 0x465550, ios 0x130738;
 
     void setAliasTexParameters() = m1 0x3d6778, imac 0x4668f0, ios 0x1311e0;
     void setAntiAliasTexParameters();
@@ -2499,8 +2496,8 @@ class cocos2d::CCTouchHandler {
 class cocos2d::CCEGLView {
     // CCEGLView();
     // CCEGLView(cocos2d::CCEGLView const&);
+    virtual void end() = m1 0x4512e4, imac 0x4f0140, ios 0x12da5c;
     virtual void swapBuffers() = m1 0x45133c, imac 0x4f01b0, ios 0x12da84;
-    void end();
 
     [[missing(android, mac, ios)]]
     void toggleFullScreen(bool, bool, bool);
@@ -2619,7 +2616,7 @@ class cocos2d::CCKeyboardDispatcher : cocos2d::CCObject {
     void forceAddDelegate(cocos2d::CCKeyboardDelegate*);
     void forceRemoveDelegate(cocos2d::CCKeyboardDelegate*);
     char const* keyToString(cocos2d::enumKeyCodes) = imac 0x1f1aa0, m1 0x1a82e0;
-    void removeDelegate(cocos2d::CCKeyboardDelegate*);
+    void removeDelegate(cocos2d::CCKeyboardDelegate*) = ios 0x239960, imac 0x1f1600, m1 0x1a7e48;
     void updateModifierKeys(bool, bool, bool, bool) = imac 0x1f1a70, m1 0x1a82c8;
 }
 
@@ -2702,7 +2699,7 @@ class cocos2d::CCDirector : cocos2d::CCObject, cocos2d::TypeInfo {
     cocos2d::CCPoint convertToUI(cocos2d::CCPoint const&);
     void createStatsLabel();
     void drawScene() = m1 0x3deef0, imac 0x46fe90, ios 0x178c64;
-    void end();
+    void end() = m1 0x3e02dc, imac 0x4714b0, ios 0x179760;
     bool isDisplayStats();
     bool isNextDeltaTimeZero();
     bool isPaused();
@@ -2715,7 +2712,7 @@ class cocos2d::CCDirector : cocos2d::CCObject, cocos2d::TypeInfo {
     void popToSceneInStack(cocos2d::CCScene*) = imac 0x471720, m1 0x3e0514;
     void popToSceneStackLevel(int) = imac 0x4715b0, m1 0x3e03c0, ios 0x179844;
     void purgeCachedData();
-    void purgeDirector() = imac 0x471780;
+    void purgeDirector() = m1 0x3e0564, imac 0x471780, ios 0x17997c;
     bool pushScene(cocos2d::CCScene*) = imac 0x471230, m1 0x3e0034, ios 0x179580;
     void removeStatsLabel() = imac 0x471990, m1 0x3e0734;
     bool replaceScene(cocos2d::CCScene*) = imac 0x4712e0, m1 0x3e00fc, ios 0x179608;
@@ -2908,7 +2905,9 @@ class cocos2d::CCLabelBMFont : cocos2d::CCSpriteBatchNode, cocos2d::CCLabelProto
     CCLabelBMFont() = imac 0x5c0350, m1 0x4f5d58, ios 0x2fb2e8;
 
     static cocos2d::CCLabelBMFont* create(char const*, char const*) = imac 0x5bfed0, m1 0x4f58bc, ios 0x2faee0;
-    static cocos2d::CCLabelBMFont* create(char const*, char const*, float) = m1 0x4f57fc, imac 0x5bfe20;
+    static cocos2d::CCLabelBMFont* create(char const* str, char const* fntFile, float width) = m1 0x4f57fc, imac 0x5bfe20, ios inline {
+        return cocos2d::CCLabelBMFont::create(str, fntFile, width, kCCTextAlignmentLeft, CCPointZero);
+    }
     static cocos2d::CCLabelBMFont* create(char const* str, char const* fntFile, float width, cocos2d::CCTextAlignment alignment) = imac 0x5bfcd0, m1 0x4f5678, ios inline {
         return cocos2d::CCLabelBMFont::create(str, fntFile, width, alignment, CCPointZero);
     }
@@ -3319,7 +3318,7 @@ class cocos2d::CCRepeat : cocos2d::CCActionInterval {
     }
 
     virtual cocos2d::CCObject* copyWithZone(cocos2d::CCZone* pZone) = m1 0x32ffdc, imac 0x3a32a0, ios inline {
-        // CCZone* pNewZone = NULL;
+        CCZone* pNewZone = NULL;
         CCRepeat* pCopy = NULL;
         if(pZone && pZone->m_pCopyObject) 
         {
@@ -3329,14 +3328,14 @@ class cocos2d::CCRepeat : cocos2d::CCActionInterval {
         else
         {
             pCopy = new CCRepeat();
-            // pZone = pNewZone = new CCZone(pCopy);
+            pZone = pNewZone = new CCZone(pCopy);
         }
 
         CCActionInterval::copyWithZone(pZone);
 
         pCopy->initWithAction((CCFiniteTimeAction*)(m_pInnerAction->copy()->autorelease()), m_uTimes);
 
-        // CC_SAFE_DELETE(pNewZone);
+        CC_SAFE_DELETE(pNewZone);
         return pCopy;
     }
     virtual void update(float dt) = imac 0x3a3540, m1 0x330274, ios inline {
@@ -3784,7 +3783,7 @@ class cocos2d::CCCallFuncN : cocos2d::CCCallFunc, cocos2d::TypeInfo { // full co
     }
 
     virtual cocos2d::CCObject* copyWithZone(CCZone* zone) = ios inline {
-        // CCZone* pNewZone = NULL;
+        CCZone* pNewZone = NULL;
         CCCallFuncN* pRet = NULL;
 
         if (zone && zone->m_pCopyObject) {
@@ -3792,12 +3791,12 @@ class cocos2d::CCCallFuncN : cocos2d::CCCallFunc, cocos2d::TypeInfo { // full co
             pRet = (CCCallFuncN*) (zone->m_pCopyObject);
         } else {
             pRet = new CCCallFuncN();
-            // zone = pNewZone = new CCZone(pRet);
+            zone = pNewZone = new CCZone(pRet);
         }
 
         CCCallFunc::copyWithZone(zone);
         pRet->initWithTarget(m_pSelectorTarget, m_pCallFuncN);
-        // CC_SAFE_DELETE(pNewZone);
+        CC_SAFE_DELETE(pNewZone);
         return pRet;
     }
     
@@ -4026,11 +4025,11 @@ class cocos2d::CCSpriteFrameCache : cocos2d::CCObject {
 
 [[link(win, android)]]
 class cocos2d::CCString : cocos2d::CCObject {
+    static cocos2d::CCString* createWithContentsOfFile(char const*) = m1 0x6a8d88, imac 0x795990, ios 0x268148;
     static cocos2d::CCString* createWithData(unsigned char const*, unsigned long) = imac 0x7956c0, m1 0x6a8b3c, ios 0x26800c;
     // static cocos2d::CCString* createWithFormat(char const*, ...) = ios 0x2680c0, m1 0x6a8cd0;
 
     char const* getCString() const = imac 0x7950f0, m1 0x6a84a8, ios 0x267ca4;
-    //createWithContentsOfFile = ios 0x278b74;
 
     bool boolValue() const = imac 0x7954b0, m1 0x6a8838, ios 0x267e58;
     int intValue() const = imac 0x7953c0, m1 0x6a874c, ios 0x267da8;
@@ -4253,7 +4252,7 @@ class cocos2d {
     static void ccDrawFree();
     static void ccDrawInit();
     static void ccDrawLine(cocos2d::CCPoint const&, cocos2d::CCPoint const&) = m1 0x1ac0ec, imac 0x1f65e0, ios 0x24b408;
-    static void ccDrawLines(cocos2d::CCPoint const*, unsigned int) = m1 0x1abfd8, imac 0x1f64d0;
+    static void ccDrawLines(cocos2d::CCPoint const*, unsigned int) = m1 0x1abfd8, imac 0x1f64d0, ios 0x24b34c;
     static void ccDrawPoint(cocos2d::CCPoint const&);
     static void ccDrawPoints(cocos2d::CCPoint const*, unsigned int);
     static void ccDrawPoly(cocos2d::CCPoint const*, unsigned int, bool);
@@ -4747,7 +4746,7 @@ class cocos2d::CCConfiguration {
 
 	// CCConfiguration();
 	// CCConfiguration(cocos2d::CCConfiguration const&);
-	bool checkForGLExtension(gd::string const&) const;
+	bool checkForGLExtension(gd::string const&) const = m1 0x4634b4, imac 0x503d20, ios 0x3252b0;
 	void dumpInfo() const;
 	void gatherGPUInfo();
 	void loadConfigFile(char const*);
@@ -4761,21 +4760,21 @@ class cocos2d::CCConfiguration {
 [[link(win, android)]]
 class cocos2d::CCPoolManager {
 	// CCPoolManager();
-	void addObject(cocos2d::CCObject*);
+	void addObject(cocos2d::CCObject*) = m1 0x367390, imac 0x3e5070, ios 0x1b448c;
 	void finalize();
 	cocos2d::CCAutoreleasePool* getCurReleasePool();
 	void pop() = m1 0x367288, imac 0x3e4f70, ios 0x1b43d0; // should be
 	static void purgePoolManager();
 	void push();
 	void removeObject(cocos2d::CCObject*);
-	static cocos2d::CCPoolManager* sharedPoolManager();
+	static cocos2d::CCPoolManager* sharedPoolManager() = m1 0x366e98, imac 0x3e4b70, ios 0x1b41f4;
 }
 
 [[link(win, android)]]
 class cocos2d::CCZone {
-    // CCZone(cocos2d::CCObject*) = ios 0x2534b4;
-
-    cocos2d::CCObject* m_pCopyObject;
+    CCZone(cocos2d::CCObject* object) {
+        m_pCopyObject = object;
+    }
 }
 
 [[link(android)]]
@@ -4784,4 +4783,17 @@ class cocos2d::CCDisplayLinkDirector : cocos2d::CCDirector {
     virtual void stopAnimation() = win 0xbda50, m1 0x3e0a9c, imac 0x471d70, ios 0x179e5c;
     virtual void startAnimation() = win 0xbda10, m1 0x3e0a24, imac 0x471cf0, ios 0x179de4;
     virtual void mainLoop() = win 0xbc600, m1 0x3e0a60, imac 0x471d30, ios 0x179e20;
+}
+
+[[link(win, android)]]
+class cocos2d::CCScriptEngineManager {
+    cocos2d::CCScriptEngineProtocol* getScriptEngine();
+    void setScriptEngine(cocos2d::CCScriptEngineProtocol* engine) = m1 0x29eaa8, imac 0x307980, ios inline {
+        if (m_pScriptEngine) delete m_pScriptEngine;
+        m_pScriptEngine = engine;
+    }
+    void removeScriptEngine();
+    
+    static cocos2d::CCScriptEngineManager* sharedManager() = m1 0x29e3d8, imac 0x3072f0, ios 0x2726e0;
+    static void purgeSharedManager();
 }
