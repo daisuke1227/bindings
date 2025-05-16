@@ -13584,12 +13584,12 @@ class HardStreak : cocos2d::CCDrawNode {
         this->clear();
         m_pointArray->removeAllObjects();
     }
-    void resumeStroke() = ios 0x61bd4, m1 0x8ff80, imac 0x9d480, win inline {
+    void resumeStroke() = ios 0x17A618, m1 0x8ff80, imac 0x9d480, win inline {
         this->m_drawStreak = true;
         updateStroke(0.f);
     }
     TodoReturn scheduleAutoUpdate();
-    void stopStroke() = win 0x2b17f0, m1 0x8ff8c, imac 0x9d4a0;
+    void stopStroke() = win 0x2b17f0, m1 0x8ff8c, imac 0x9d4a0, ios 0x17A610;
     callback void updateStroke(float) = ios 0x615ac, win 0x2b1830, m1 0x8f870, imac 0x9cc30;
 
     cocos2d::CCArray* m_pointArray;
